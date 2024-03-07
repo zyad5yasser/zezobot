@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['ppcouple','tofanime']
 handler.tags = ['anime']
-handler.command = ['ppcouple','tofanime','طقم-بنات'] 
+handler.command = ['ppcouple','tofanime','تطقيم'] 
 
 
 export default handler
