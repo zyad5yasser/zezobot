@@ -1,9 +1,9 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-let info = `بوبيزة متصلة الان بالانترنيت \nيمكنك كتابة \n.menu\n لتنبتق لك جميع الاوامر \n@${m.sender.split('@')[0]} \n`
+let info = `زيزو متصل الان بالانترنيت \nيمكنك كتابة \n.menu\n لتنبتق لك جميع الاوامر \n@${m.sender.split('@')[0]} \n`
 await conn.reply(m.chat, info, m, { contextInfo: { mentionedJid: [m.sender],forwardingScore: 80,
-      isForwarded: true, externalAdReply: { title: author, body: bottime,thumbnail: fs.readFileSync('./thumbnail.jpg') }}})
+      isForwarded: true, externalAdReply: { title: author, body: bottime,thumbnail: fs.readFileSync('./https://telegra.ph/file/d6bc4fb6bbb3870a7e17e.jpg') }}})
       await conn.sendMessage(m.chat, {
         audio: {
             url: "bobizaty♥.mp3"
