@@ -16,5 +16,5 @@ const handler = async (m, {conn, usedPrefix: prefix, command, text}) => {
 };
 handler.help = ["apk"]
 handler.tags = ["applications"]
-handler.command = ["apk|تطبيق"] 
+handler.command = ["apk","تطبيق"] 
 export default handler;
