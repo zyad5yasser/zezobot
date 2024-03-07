@@ -10,23 +10,23 @@ import moment from 'moment-timezone';
 global.botnumber = ""
 
 global.owner = [
-  ['212717457920', 'bobiza', true],
+  ['201276638909', '𝑍𝐸𝑍𝛩', true],
 
-  ['212717457920','bobiza', true],
-  ['212717457920'],
-  ['212717457920']
+  ['201116117654','𝑍𝐸𝑍𝛩 𝐵𝛩𝑇', true],
+  ['201276638909'],
+  ['201276638909']
 ];
 
-global.suittag = ['212717457920'];
-global.prems = ['212717457920'];
+global.suittag = ['201276638909'];
+global.prems = ['201116117654'];
 
-global.packname = 'bobiza bot';
-global.author = 'bobiza';
-global.wm = 'bobiza';
-global.titulowm = 'bobiza';
-global.titulowm2 = `bobiza`
+global.packname = '𝑍𝐸𝑍𝛩 𝐵𝛩𝑇';
+global.author = '𝑍𝐸𝑍𝛩';
+global.wm = '𝑍𝐸𝑍𝛩';
+global.titulowm = '𝑍𝐸𝑍𝛩';
+global.titulowm2 = `𝑍𝐸𝑍𝛩`
 global.igfg = 'bobiza';
-global.wait = '*|🏃| loading...*\n*نحاول تلبية طلبكم لا تستعجلوا* ♥\ninstagram.com/noureddine_ouafy';
+global.wait = '*|🏃| loading...*\n*نحاول تلبية طلبكم لا تستعجلوا* ♥\nhttps://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg==';
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
 global.imagen2 = fs.readFileSync('./src/nuevobot.jpg');
 global.imagen3 = fs.readFileSync('./src/Pre Bot Publi.png');
