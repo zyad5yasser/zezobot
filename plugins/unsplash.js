@@ -22,7 +22,7 @@ let handler = async (m, { conn, isOwner, usedPrefix, command, args }) => {
 }
 handler.help = ["unsplash"]
 handler.tags = ["downloader"]
-handler.command = /^(unsplash)$/i
+handler.command = /^(unsplash|صوره)$/i
 export default handler
 
 async function searchImages(term) {
