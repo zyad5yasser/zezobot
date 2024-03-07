@@ -23,7 +23,7 @@ let tags = {
 const defaultMenu = {
   before: `السلام عليكم 👋. 
 
-┏━━ salam  *@user*
+┏━━ salam  *@name*
 👥 *Total user:* %totalreg 
 ⏰ *Uptime:* %muptime  
 ┗━━━━━━━━━━⬣
