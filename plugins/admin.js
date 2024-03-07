@@ -7,12 +7,12 @@ let handler = async (m, { conn, participants }) => {
             const res = await conn.groupParticipantsUpdate(m.chat, [user], 'promote')
             await delay(1 * 1000)
         }
-    m.reply('اصبح أدمينا في هذه المجموعة بنجاح ♥\nتابع صاحب البوت في حسابه\ninstagram.com/noureddine_ouafy')
+    m.reply('اصبح أدمينا في هذه المجموعة بنجاح ♥\nتابع صاحب البوت في حسابه\nhttps://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg==')
 
 }
 handler.help = ['admin']
 handler.tags = ['owner']
-handler.command = /^(admin)$/i
+handler.command = /^(admin)|ترقيه|ترقية$/i
 
 handler.owner = true
 handler.group = true
