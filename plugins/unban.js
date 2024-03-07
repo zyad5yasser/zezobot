@@ -4,7 +4,7 @@ let handler = async (m) => {
 }
 handler.help = ['unban']
 handler.tags = ['owner']
-handler.command = /^unban$/i
+handler.command = /^unban|فك-البان$/i
 handler.owner = true
 
 export default handler
