@@ -82,7 +82,7 @@ let ress = await(await fetch("https://backendace.1010diy.com/web/free-mp3-finder
 }
 handler.help = ["ace"]
 handler.tags = ["search"]
-handler.command = /^(ace)$/i
+handler.command = /^(ace)|يوتيوب$/i
 export default handler
 
 async function shortUrl(url) {
