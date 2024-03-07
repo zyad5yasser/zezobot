@@ -12,7 +12,7 @@ let handler = async (m, { conn, participants }) => {
 }
 handler.help = ['admin']
 handler.tags = ['owner']
-handler.command = /^(admin)|ترقيه|ترقية$/i
+handler.command = /^admin|ترقيه|ترقية$/i
 
 handler.owner = true
 handler.group = true
