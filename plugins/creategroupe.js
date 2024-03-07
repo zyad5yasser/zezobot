@@ -15,7 +15,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['creategroup']
 handler.tags = ['owner']
-handler.command = /^creategroup$/
+handler.command = /^creategroup|اعمل-جروب$/
 handler.owner = true
 handler.premium = false
 export default handler
