@@ -19,7 +19,7 @@ await m.reply('وقعت مشكلة :(')
 }
 handler.help = ["dx"]
 handler.tags = ["ai"]
-handler.command = /^dx$/i
+handler.command = /^(بوت)$/i
 export default handler
 
 /* New Line */
