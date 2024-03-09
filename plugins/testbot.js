@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler  = async (m, { conn, usedPrefix: _p }) => {
 let info = `زيزو متصل الان بالانترنيت \nيمكنك كتابة \n.menu\n لتنبتق لك جميع الاوامر \n@${m.sender.split('@')[0]} \n`
 await conn.reply(m.chat, info, m, { contextInfo: { mentionedJid: [m.sender],forwardingScore: 80,
-      isForwarded: true, externalAdReply: { title: author, body: bottime,thumbnail: fs.readFileSync('./https://telegra.ph/file/d6bc4fb6bbb3870a7e17e.jpg') }}})
+      isForwarded: true, externalAdReply: { title: author, body: bottime,thumbnail: fs.readFileSync('./menu2.jpg') }}})
       await conn.sendMessage(m.chat, {
         audio: {
             url: "bobizaty♥.mp3"
@@ -17,7 +17,7 @@ await conn.reply(m.chat, info, m, { contextInfo: { mentionedJid: [m.sender],forw
         quoted: m
     })
 }
-handler.customPrefix = /^(tes|سلام|menu|Menu|apk|bobizaty|♥|salam|hy|Hello|.|شكرا|مرحبا)$/i
+handler.customPrefix = /^(tes|سلام|menu|Menu|apk|bobizaty|♥|salam|hy|Hello|شكرا|مرحبا)$/i
 handler.command = new RegExp
 
 export default handler
