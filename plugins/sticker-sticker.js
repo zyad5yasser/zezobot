@@ -24,9 +24,9 @@ stiker = await createSticker(false, args[0], '', author, 20)
 stiker = 'رجاء قم بالاشارة للصورة التي تريد أن تحولها لملصق و اكتب الامر \n *.sticker*'	
 } finally {
 m.reply(stiker)}}
-handler.help = ['sticker','ملصق']
+handler.help = ['sticker']
 handler.tags = ['sticker']
-handler.command = /^s(tic?ker)?(gif)?(wm)?(ملصق)$/i
+handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
 export default handler
 const isUrl = (text) => text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
 async function createSticker(img, url, packName, authorName, quality) {
