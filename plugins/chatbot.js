@@ -3,11 +3,11 @@ let handler = m => m
  let chat = global.db.data.chats[m.chat] 
   
  if (/^احا$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `* احتين علي احتك 🐦🥹*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `*احتين علي احتك 🐦🥹*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
  } 
 
 if (/^زياد|زيزو|زوز$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `*عمك 👑❤️‍🔥*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `*قلبه 🥺♥*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
 }
 
    if (/^عبيط|يا عبيط |اهبل |غبي$/i.test(m.text) ) { //sem prefixo 
@@ -39,8 +39,8 @@ if (/^حمدي$/i.test(m.text) ) { //sem prefixo
 
    }
 
-   if (/^زياد|زيزو|زوز$/i.test(m.text) ) { //sem prefixo
-     conn.reply(m.chat,'*عمك 😎*',m) //wm, null, [['Menu','#menu']], m) botones :v
+   if (/^بوت خرا|بوت زفت|خرا عليك$/i.test(m.text) ) { //sem prefixo
+     conn.reply(m.chat,'* 🐤💔بص يا حب اذا كان لا يعجبك البوت لا تستخدمه لانك بسب البوت تكون قد سبيت مطور البوت*',m) //wm, null, [['Menu','#menu']], m) botones :v
 
    }
  if (/^اوهايو$/i.test(m.text) ) { //sem prefixo 
@@ -85,7 +85,7 @@ if (/^حمدي$/i.test(m.text) ) { //sem prefixo
   
  } 
   
- if (/^حرامي|سارق$/i.test(m.text) ) { //sem prefixo 
+ if (/^حرامي|سارق|لص$/i.test(m.text) ) { //sem prefixo 
      conn.reply(m.chat, `تتهم بريء بالسرقة 
  من دون تحري او بحث 
  عن حقيقة ليست ملموسة 
