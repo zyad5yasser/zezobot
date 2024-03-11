@@ -82,9 +82,9 @@ let handler = async (m, {
         
     }
 }
-handler.help = ["coran"]
+handler.help = ["قرآن"]
 handler.tags = ["islam"]
-handler.command = /^(coran)$/i
+handler.command = /^(قرآن)$/i
 export default handler
 
 /* New Line */
