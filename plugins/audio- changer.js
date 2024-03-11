@@ -35,7 +35,7 @@ ptt: true
 } catch (e) {
 throw e
 }}
-handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'robot', 'slow', 'smooth', 'tupai'].map(v => v + ' [vn]')
+handler.help = ['تخينن', 'منفوخ', 'عميق', 'صاخب', 'سريع', 'تخين', 'سنجاب', 'reverse', 'روبوت', 'بطيء', 'ناعم', 'رفيع'].map(v => v + ' [vn]')
 handler.tags = ['audio-changer']
 handler.command = /^(عميق|منفوخ|تخين|صاخب|سريع|تخينن|رفيع|روبوت|بطيء|ناعم|سنجاب)$/i
 export default handler
