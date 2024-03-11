@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let q = m.quoted ? m.quoted : m;
 				let mime = (q.msg || q).mimetype || q.mediaType || "";
 				if (!mime)
-					throw `ارسل للبوت اي صورة وسوف يقوم  بإضافة لمسة يجعلها جميلة وجذابة\n\nارسل الصورة تم أشر اليها واكتب \n*.dehaze*`;
+					throw `ارسل للبوت اي صورة وسوف يقوم  بإضافة لمسة يجعلها جميلة وجذابة\n\nارسل الصورة تم أشر اليها واكتب \n*.تعديل*`;
 				if (!/image\/(jpe?g|png)/.test(mime))
 					throw `Mime ${mime} not support`;
 				else conn.enhancer[m.sender] = true;
@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let error;
 				try {
 					const This = await processing(img, "dehaze");
-					conn.sendFile(m.chat, This, "", " instagram.com/noureddine_ouafy ...", m);
+					conn.sendFile(m.chat, This, "", " https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg== ...", m);
 				} catch (er) {
 					error = true;
 				} finally {
@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let q = m.quoted ? m.quoted : m;
 				let mime = (q.msg || q).mimetype || q.mediaType || "";
 				if (!mime)
-					throw `ارسل للبوت اي صورة وسوف يقوم بالتلاعب وتغيير بعض الالوان في الصورة\n\nارسل الصورة تم أشر اليها واكتب \n*.recolor*`;
+					throw `ارسل للبوت اي صورة وسوف يقوم بالتلاعب وتغيير بعض الالوان في الصورة\n\nارسل الصورة تم أشر اليها واكتب \n*.تغير-الالوان*`;
 				if (!/image\/(jpe?g|png)/.test(mime))
 					throw `Mime ${mime} tidak support`;
 				else conn.recolor[m.sender] = true;
@@ -44,7 +44,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let error;
 				try {
 					const This = await processing(img, "recolor");
-					conn.sendFile(m.chat, This, "", " instagram.com/noureddine_ouafy ...", m);
+					conn.sendFile(m.chat, This, "", " https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg== ...", m);
 				} catch (er) {
 					error = true;
 				} finally {
@@ -61,7 +61,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let q = m.quoted ? m.quoted : m;
 				let mime = (q.msg || q).mimetype || q.mediaType || "";
 				if (!mime)
-					throw `ارسل للبوت اي صورة وسوف يقوم برفع جودتها لتصبح HD\n\nارسل الصورة تم أشر اليها واكتب \n*.hd*`;
+					throw `ارسل للبوت اي صورة وسوف يقوم برفع جودتها لتصبح HD\n\nارسل الصورة تم أشر اليها واكتب \n*.جوده*`;
 				if (!/image\/(jpe?g|png)/.test(mime))
 					throw `Mime ${mime} tidak support`;
 				else conn.hdr[m.sender] = true;
@@ -70,7 +70,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let error;
 				try {
 					const This = await processing(img, "enhance");
-					conn.sendFile(m.chat, This, "", " instagram.com/noureddine_ouafy ...", m);
+					conn.sendFile(m.chat, This, "", " https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg== ...", m);
 				} catch (er) {
 					error = true;
 				} finally {
@@ -83,9 +83,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 			break;
 	}
 };
-handler.help = ["dehaze","recolor","hd"];
+handler.help = ["تعديل","تغير-الالوان","جوده"];
 handler.tags = ["image-edit"];
-handler.command = ["dehaze","recolor","hd"];
+handler.command = ["تعديل","تغير-الالوان","جوده"];
 export default handler;
 
 async function processing(urlPath, method) {
