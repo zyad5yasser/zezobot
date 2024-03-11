@@ -10,10 +10,10 @@ const handler = async (m, { conn, args, text, command, usedPrefix, isCreator, is
     }
   });
   let res = `https://api.lolhuman.xyz/api/idulfitri?apikey=Gatadios&text=${response[0]}`;
-  conn.sendFile(m.chat, res, 'idulfitri.jpg', 'instagram.com/noureddine_ouafy', m, false);
+  conn.sendFile(m.chat, res, 'idulfitri.jpg', 'https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg==', m, false);
 };
-handler.help = ['aidfitr'];
+handler.help = ['عيد فطر'];
 handler.tags = ['logo'];
-handler.command = /^(aidfitr)$/i;
+handler.command = /^(عيد-الفطر)$/i;
 
 export default handler;
