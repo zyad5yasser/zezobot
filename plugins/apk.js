@@ -14,7 +14,7 @@ const handler = async (m, {conn, usedPrefix: prefix, command, text}) => {
     throw `*[😒] خطأ، لم يتم العثور على نتائج لبحثك.*`;
   }    
 };
-handler.help = ["apk"]
+handler.help = ["تطبيق"]
 handler.tags = ["applications"]
 handler.command = ["apk","تطبيق"] 
 export default handler;
