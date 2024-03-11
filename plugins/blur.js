@@ -16,8 +16,8 @@ let handler = async (m, { conn, text }) => {
 		m.reply(buffer)
 	})
 }
-handler.help = ["blur"]
+handler.help = ["تعتيم"]
 handler.tags = ["image-edit"];
-handler.command = /^(blur)$/i
+handler.command = /^(تعتيم)$/i
 
 export default handler
