@@ -2,16 +2,16 @@ import moment from 'moment-timezone';
 
 const handler = async (m, {conn}) => {
 
-  const tzAF = moment().tz('Africa/Casablanca').format('DD/MM HH:mm');
+  const tzAF = moment().tz('Africa/Cairo').format('DD/MM HH:mm');
   await conn.sendMessage(m.chat, {text: `\`\`\`
-الوقت الحالي في المغرب هو :
+الوقت الحالي في مصر هو :
 
 
-▢ morocco     : ${tzAF}
+▢ eygpt     : ${tzAF}
   ${String.fromCharCode(8206).repeat(850)}
-  ▢ instagram.com/noureddine_ouafy`}, {quoted: m});
+  ▢ https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg==`}, {quoted: m});
   };
-handler.help = ["tz"]
+handler.help = ["توقيت"]
 handler.tags = ["infobot"]
-handler.command = /^(tz)$/i
+handler.command = /^(توقيت)$/i
   export default handler;
