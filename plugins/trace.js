@@ -66,8 +66,8 @@ function formatDuration(ms) {
   return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
 
-handler.help = ["trace"];
+handler.help = ["تراك"];
 handler.tags = ["anime"];
-handler.command = /^trace$/i;
+handler.command = /^تراك$/i;
 
 export default handler;
