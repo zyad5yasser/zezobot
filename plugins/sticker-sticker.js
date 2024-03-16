@@ -26,7 +26,7 @@ stiker = 'رجاء قم بالاشارة للصورة التي تريد أن ت�
 m.reply(stiker)}}
 handler.help = ['ملصق']
 handler.tags = ['sticker']
-handler.command = /^s(tic?ker)?(ملصق)?$/i
+handler.command = /^s|ملصق$/i
 export default handler
 const isUrl = (text) => text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
 async function createSticker(img, url, packName, authorName, quality) {
