@@ -29,11 +29,10 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				}
 			}
 			break;
-		case "recolor":
-			{
+		case "recolor":		{
 				conn.recolor = conn.recolor ? conn.recolor : {};
 				let q = m.quoted ? m.quoted : m;
-				let mime = (q.msg || q).mimetype || q.mediaType || "";
+			let mime = (q.msg || q).mimetype || q.mediaType || "";
 				if (!mime)
 					throw `ارسل للبوت اي صورة وسوف يقوم بالتلاعب وتغيير بعض الالوان في الصورة\n\nارسل الصورة تم أشر اليها واكتب \n*.تغير-الالوان*`;
 				if (!/image\/(jpe?g|png)/.test(mime))
@@ -64,7 +63,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 					throw `ارسل للبوت اي صورة وسوف يقوم برفع جودتها لتصبح HD\n\nارسل الصورة تم أشر اليها واكتب \n*.جوده*`;
 				if (!/image\/(jpe?g|png)/.test(mime))
 					throw `Mime ${mime} tidak support`;
-				else conn.hdr[m.sender] = true;
+				else conn.جوده[m.sender] = true;
 				m.reply(wait);
 				let img = await q.download?.();
 				let error;
@@ -77,7 +76,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 					if (error) {
 						m.reply("*فشلت العملية*😣");
 					}
-					delete conn.hdr[m.sender];
+					delete conn.جوده[m.sender];
 				}
 			}
 			break;
