@@ -30,7 +30,7 @@ if (/^حمدي$/i.test(m.text) ) { //sem prefixo
       
     }
  if (/^يب$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` *قول نعم يا حب 🫶🏻 🐦❤*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `*قول نعم ياحب 🫶🏻 🐦❤*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
 
  } 
 
@@ -81,7 +81,7 @@ if (/^حمدي$/i.test(m.text) ) { //sem prefixo
  } 
   
  if (/^اخرس|اسكت$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `حاضر 🥺💔`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `*بس ياد شوفلك كلبه احكم عليها🥱*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
