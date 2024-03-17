@@ -14,7 +14,7 @@ let handler = async (m) => {
 ▢ *هذا هو رابط الصورة:* ${link}\n\n\nتابع صاحب البوت في حسابه\ninstagram.com/noureddine_ouafy
   `)
 }
-handler.help = ['tourl']
+handler.help = ['تليجراف']
 handler.tags = ['uploader']
-handler.command = ['telegraph', 'tourl','dir']
+handler.command = ['تليجراف', 'tourl','dir']
 export default handler;
