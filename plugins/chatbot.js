@@ -3,7 +3,7 @@ let handler = m => m
  let chat = global.db.data.chats[m.chat] 
   
  if (/^احا$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `*احتين علي احتك 🐦🥹*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `*احتين علي احتك 🐦🥹*`,`*عيب♡*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
  } 
 
 if (/^زياد|زيزو|زوز$/i.test(m.text) ) { //sem prefixo 
