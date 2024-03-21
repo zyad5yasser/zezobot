@@ -47,9 +47,9 @@ const handler = async (m, { conn, usedPrefix, args }) => {
   }
 };
 
-handler.menu = ['grouplist'];
+handler.menu = ['قائمة-الجروب'];
 handler.tags = ['tools'];
-handler.command = /^(grouplist)$/i;
+handler.command = /^(قائمة-الجروب)$/i;
 export default handler;
 
 function formatTime(timestamp) {
