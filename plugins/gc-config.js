@@ -19,7 +19,7 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
   await conn.groupSettingUpdate(m.chat, isClose);
   {m.reply('*[ ✔ ] تم إجراء العملية بنجاح*');}
 };
-handler.help = ['group open / close', 'grupo abrir / cerrar'];
+handler.help = ['group open / close'];
 handler.tags = ['group'];
 handler.command = /^(جروب|grupo)$/i;
 handler.admin = true;
