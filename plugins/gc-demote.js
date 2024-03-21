@@ -24,7 +24,7 @@ const handler = async (m, {conn, usedPrefix, text}) => {
     conn.reply(m.chat, `*[ ✅ ] تم تنفيذ الأمر*`, m);
   }
 };
-handler.help = ['*593xxx*', '*@usuario*', '*responder chat*'].map((v) => 'demote ' + v);
+handler.help = ['خفض'].map((v) => 'demote ' + v);
 handler.tags = ['group'];
 handler.command = /^(اعفاء|خفض|quitaradmin)$/i;
 handler.group = true;
