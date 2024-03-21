@@ -21,10 +21,10 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   } catch (e) {
   } finally {
     conn.groupParticipantsUpdate(m.chat, [user], 'promote');
-    conn.reply(m.chat, `*[ ✅ ] تم رفعه يا حب*`, m);
+    conn.reply(m.chat, `*[ ✅ ] تمت الترقيه بنجاح*`, m);
   }
 };
-handler.help = ['*593xxx*', '*@usuario*', '*responder chat*'].map((v) => 'promote ' + v);
+handler.help = ['ترقيه'].map((v) => 'promote ' + v);
 handler.tags = ['group'];
 handler.command = /^(promote|رفع|ترقيه)$/i;
 handler.group = true;
