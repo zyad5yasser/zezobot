@@ -16,9 +16,9 @@ let handler = async (m, { conn, args }) => {
   }
 };
 
-handler.help = ['listonline'];
-handler.tags = ['owner'];
-handler.command = /^(listonline)/i;
+handler.help = ['المتصلين'];
+handler.tags = ['group'];
+handler.command = /^(المتصلين)/i;
 handler.owner = false;
 handler.mods = false;
 handler.premium = false;
