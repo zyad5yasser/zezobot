@@ -16,12 +16,12 @@ ${result.lyrics}
 
     } catch (error) {
         console.error('Error:', error);
-        conn.reply(m.chat, `وقعت مشكلة راسل نورالدين \ninstagram.com/noureddine_ouafy`, m);
+        conn.reply(m.chat, `*حدث خطأ...*`, m);
     }
 }
 
-handler.help = ['lyrics']
+handler.help = ['كلمات']
 handler.tags = ['tools']
-handler.command = /^(lyrics)$/i
+handler.command = /^(كلمات)$/i
 
 export default handler
