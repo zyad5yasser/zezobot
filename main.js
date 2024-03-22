@@ -329,14 +329,14 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '👋 ¡Welcome/to!\n@user';
-  conn.bye = '👋 ¡See you later!\n@user';
-  conn.spromote = '*[ ℹ️ ] @user He was promoted to administrator.*';
-  conn.sdemote = '*[ ℹ️ ] @user He was demoted from administrator.*';
-  conn.sDesc = '*[ ℹ️ ] The group description has been modified.*';
-  conn.sSubject = '*[ ℹ️ ] The group name has been changed.*';
-  conn.sIcon = '*[ ℹ️ ] The group profile photo has been changed.*';
-  conn.sRevoke = '*[ ℹ️ ] The group invite link has been reset.*';
+  conn.welcome = '👋 ¡مرحبا/to!\n@user';
+  conn.bye = '👋 ¡وداعا!\n@user';
+  conn.spromote = '*[ ℹ️ ] @user تمت ترقيتك الي ادمن ف الجروب الف مبروك🤭...*';
+  conn.sdemote = '*[ ℹ️ ] @user تم تنزيلك من الادمن كنت ادمن فاشل...*';
+  conn.sDesc = '*[ ℹ️ ] تم تغير وصف الجروب...*';
+  conn.sSubject = '*[ ℹ️ ] تغير اسم الجروب...*';
+  conn.sIcon = '*[ ℹ️ ] تغيرت صورة الجروب...*';
+  conn.sRevoke = '*[ ℹ️ ] تم تغير لينك الجروب...*';
 
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
@@ -490,7 +490,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `BOBIZA BOT [ ⏳ ] Uptime: ${uptime}`;
+  const bio = `𝑍𝐸𝑍𝛩 𝐵𝛩𝑇 [ ⏳ ] Uptime: ${uptime}`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {
