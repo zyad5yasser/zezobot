@@ -1183,7 +1183,7 @@ const messageText = `
  ❰ ⚠️ ❱ *USER BANNED!* ❰ ⚠️ ❱
 —◉ *Notice ${messageNumber}/3 (Total: 3)*
 —◉ Reason ${user.bannedReason ? `\n*:* ${user.bannedReason}` : '*Reason:* Unspecified'}
-—◉ *إذا كنت تعتقد أن هذا خطأ ولديك دليل، فيمكنك الاتصال بمالك الروبوت لاستئناف التعليق.* —◉ *التواصل مع مالكه:* wa.me/212605784394
+—◉ *إذا كنت تعتقد أن هذا خطأ ولديك دليل، فيمكنك الاتصال بمالك الروبوت لاستئناف التعليق.* —◉ *التواصل مع مالكه:* wa.me/201276638909
 ╚═════════════════════╝
                `.trim();
               m.reply(messageText);
@@ -1535,16 +1535,16 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: '*[ ℹ️ ] This command can only be used by the bot owner.*',
-    owner: '*[ ℹ️ ] This command can only be used by the bot owner.*',
-    mods: '*[ ℹ️ ] This command can only be used by moderators and the bot owner.*',
-    premium: '*[ ℹ️ ] This command can only be used by premium users and the bot owner.*',
-    group: '*[ ℹ️ ] This command can only be used in groups.*',
-    private: '*[ ℹ️ ] This command can only be used in the bot s private chat.*',
-    admin: '*[ ℹ️ ] This command can only be used by group administrators.*',
-    botAdmin: '*[ ℹ️ ] To use this command it is necessary that the bot be an administrator of the group.*',
-    unreg: '*[ ℹ️ ] To use this command you must be registered.*\n\n*[ 💡 ] Use the command:* _#verify name.age_ *to register.*',
-    restrict: '*[ ℹ️ ] This command was disabled by the bot owner.*',
+    rowner: '*[ ℹ️ ] هذا الامر خاص بالمالك فقط 🥱.*',
+    owner: '*[ ℹ️ ] هذا الامر خاص بمالك البوت فقط🐦.*',
+    mods: '*[ ℹ️ ] يستطيع المالك فقط استخدام هذا الامر.*',
+    premium: '*[ ℹ️ ] هذا الامر يمكن استخدامه من المالك والمميزين فقط.*',
+    group: '*[ ℹ️ ] هذا الامر خاص بالجروبات.*',
+    private: '*[ ℹ️ ] يمكن استخدام هذا الامر ف الخاص فقط.*',
+    admin: '*[ ℹ️ ] يمكن استخدام هذا الامر من مشرفي المجموعه فقط.*',
+    botAdmin: '*[ ℹ️ ] يجب رفع البوت ادمن اولا.*',
+    unreg: '*[ ℹ️ ] لاستخدام هذا الامر يجب ان تكون مسجل.*\n\n*[ 💡 ] Use the command:* _#verify name.age_ *to register.*',
+    restrict: '*[ ℹ️ ] تم تعطيل هذا الأمر من قبل مالك الروبوت.*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
   const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Warning*', body: 'BOBIZABOT', thumbnail: imagen1, sourceUrl: 'https://instagram.com/noureddine_ouafy'}}}}, aa);
