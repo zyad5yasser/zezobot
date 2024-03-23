@@ -36,7 +36,7 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
           '*[❗𝐈𝐍𝐅𝐎❗] المالك مفعلش الطرد كلمه عشان يفعلها*',
       );
     }
-    user.warn = 0;
+    user.warn = 3;
     await m.reply(
         `حذرتك عدده مرات!!\n*@${
           who.split`@`[0]
