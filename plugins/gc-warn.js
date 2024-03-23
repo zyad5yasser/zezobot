@@ -32,7 +32,7 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
   );
   if (user.warn >= 3) {
     if (!bot.restrict) {
-    await m.reply(
+      return m.reply(
         `حذرتك عدده مرات!!\n*@${
           who.split`@`[0]
         }* لقد تجاوزت *3* التحذيرات، الان سيتم القضاء عليك/ي 👽`,
