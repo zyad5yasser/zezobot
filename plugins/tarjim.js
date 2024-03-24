@@ -12,7 +12,7 @@ let handler = async(m, { conn, usedPrefix, command, args }) => {
         throw 'error'
     }
 }
-handler.help = ['tarjim']
+handler.help = ['ترجم']
 handler.tags = ['tools']
-handler.command = /^(tarjim)$/i
+handler.command = /^tarjim|ترجم$/i
 export default handler
