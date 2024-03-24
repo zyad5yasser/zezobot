@@ -20,8 +20,8 @@ let handler = async (m, { conn, text }) => {
   m.reply(message)
 }
 
-handler.help = ['botspec']
+handler.help = ['معلومات-البوت']
 handler.tags = ['infobot']
-handler.command = /^botspec$/i
+handler.command = /^معلوماتالبوت|معلومات-البوت$/i
 
 export default handler
