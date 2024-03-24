@@ -39,7 +39,7 @@ if (/^حمدي$/i.test(m.text) ) { //sem prefixo
 
    }
 
-   if (/^بوت خرا|بوت زفت|خرا عليك|زفت$/i.test(m.text) ) { //sem prefixo
+   if (/^بوت خرا|بوت زفت|خرا عليك$/i.test(m.text) ) { //sem prefixo
      conn.reply(m.chat,' *🐤💔بص يا حب اذا كان لا يعجبك البوت لا تستخدمه لانك بسب البوت تكون قد سبيت مطور البوت*',m) //wm, null, [['Menu','#menu']], m) botones :v
 
    }
@@ -140,7 +140,7 @@ if (/^حمدي$/i.test(m.text) ) { //sem prefixo
 
   
  if (/^كيفك|شخبارك|علوك|عامل ايه|اخبارك|اي الدنيا$/i.test(m.text) ) { //sem prefixo 
-    conn.reply(m.chat, ` *الحمد لله و انت*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+    conn.reply(m.chat, `*الحمد لله و انت*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
 
  if (/^🐤$/i.test(m.text) ) { //sem prefixo 
      conn.reply(m.chat, `🐦`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
