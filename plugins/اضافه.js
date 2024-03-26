@@ -49,10 +49,10 @@ let handler = async (m, { conn, text, participants }) => {
 }
 handler.help = ['add']
 handler.tags = ['group']
-handler.command = ['add','اضافه','ضيف']
+handler.command = ['add','ضيف','اضافه']
 handler.admin = true
 handler.group = true
-handler.rowner = true
+handler.rowner = false 
 handler.botAdmin = true
 
 export default handler
