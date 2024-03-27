@@ -1,49 +1,249 @@
+//import db from '../lib/database.js'
+
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-const sections = [
-{
-title: `◥ ツقائمة الخياراتツ ◤`,
-rows: [
-{title: "✨ | ◥ ツالترحيبツ ◤", description: "تنشيط الترحيب او ايقاف تشغيله", rowId: `${usedPrefix + command} welcome`},
-{title: "🌎 | ◥ ツالوضع العامツ ◤", description: "تفعيل البوت ف العام والخاص (الشات - الجروبات) )", rowId: `${usedPrefix + command} public`},
-{title: "🥵 | ◥ ツالاباحيةツ ◤", description:" تم حذفها من قبل المطور", rowId: `${usedPrefix + command} modohorny`},
-{title: "🔗 | ◥ ツمضاد الروابطツ ◤", description: "مضادات روابط جروبات الواتس", rowId: `${usedPrefix + command} antilink`},   
-{title: "🔗 | ◥ ツ2 مضاد الروابطツ ◤", description: "مضادات جميع الروابط", rowId: `${usedPrefix + command} antilink2`},    
-{title: "🔎 | ◥ ツتغيراتツ ◤", description: "اشعارات لتغيرات المجموعة", rowId: `${usedPrefix + command} detect`},      
-{title: "❗ | ◥ ツتقيدツ ◤", description: "تنشيط او تعطيل الطرد", rowId: `${usedPrefix + command} restrict`},    
-{title: "☑️ | ◥ ツالقراءة التلقائيةツ ◤", description: "قراءة النصوص تلقائيا", rowId: `${usedPrefix + command} autoread`},
-{title: "🔊 | ◥ ツالصوتツ ◤", description: "اوامر تغير الصوت", rowId: `${usedPrefix + command} audios`},
-{title: "👾 | ◥ ツاستيكر تلقائيツ ◤", description: "هتبقي اي حاجه البوت هيبعتها بعد كده استيكر", rowId: `${usedPrefix + command} autosticker`},
-{title: "💬 | ◥ ツفقطツ ◤", description: "تنفيذ الاوامر ف الشات الخاص بس", rowId: `${usedPrefix + command} pconly`},
-{title: "🏢 | ◥ ツجروبات فقطツ ◤", description: "تنفيذ الاوامر للجروبات بس", rowId: `${usedPrefix + command} gconly`},
-{title: "❌ | ◥ ツضد المشاهدةツ ◤", description: "مضاد الرؤيه مره واحده فقط", rowId: `${usedPrefix + command} antiviewonce`},
-{title: "📵 | ◥ ツانتي المكالماتツ ◤", description: "مضاد المكالمات", rowId: `${usedPrefix + command} anticall`},
-{title: "💬 | ◥ ツمكافحة خاصةツ ◤", description: "البوت هيحظر اي حد هيتكلم معاه ف الخاص", rowId: `${usedPrefix + command} antiprivado`},
-{title: "🤬 | ◥ ツانتي توكسيكツ ◤", description: "مضاد التوكسيك", rowId: `${usedPrefix + command} antitoxic`},
-{title: "🕸️ | ◥ ツمضاد فيرس تراباツ ◤", description: "تنشيط او تعطيل مضادات الفيروسات", rowId: `${usedPrefix + command} antitraba`},
-{title: "👎🏻 | ◥ ツمعاداة الغربツ ◤", description: "طرد الارقام الغربية من الجروب - معطل من قبل المطور", rowId: `${usedPrefix + command} antiarabes`},  
-]}, ]
-//let name = await conn.getName(m.sender)
-const listMessage = {
-text: ' ',
-footer: `┏━━━━━━━━━━━━━┓
+	
 
+  let isEnable = /true|enable|(turn)?on|1/i.test(command)
+  let chat = global.db.data.chats[m.chat]
+  let user = global.db.data.users[m.sender]
+  let bot = global.db.data.settings[conn.user.jid] || {}
+  let type = (args[0] || '').toLowerCase()
+  let isAll = false, isUser = false
+  switch (type) {
+    case 'welcome':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
+      chat.welcome = isEnable
+      break
+     case 'jarvis':
+     case 'autotalk':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+           throw false
+          }}
+      chat.jarvis = isEnable
+     break
+	case 'pmblocker':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.pmblocker = isEnable
+break	  
+case 'autobio':
+  isAll = true
+  if (!isROwner) {
+  global.dfail('rowner', m, conn)
+  throw false
+  }
+  bot.autoBio = isEnable
+  break	 
+      case 'detect':
+      case 'detector':
+        if (!m.isGroup) {
+         if (!isOwner) {
+           global.dfail('group', m, conn)
+          throw false
+        }
+       } else if (!isAdmin) {
+         global.dfail('admin', m, conn)
+         throw false
+       }
+       chat.detect = isEnable
+     break
+      case 'autosticker':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.autosticker = isEnable
+      break
+      case 'antispam':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiSpam = isEnable
+      break
+    case 'antidelete':
+    case 'delete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.delete = !isEnable
+      break
+      case 'antitoxic':
+    case 'antibadword':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiToxic = isEnable
+      break
 
+    case 'document':
+    case 'documento':
+    if (m.isGroup) {
+        if (!(isAdmin || isOwner)) return dfail('admin', m, conn)
+      }
+    chat.useDocument = isEnable
+    break
+    case 'autostatus':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      chat.viewStory = isEnable
+      break
 
+    case 'antilink':
+    case 'antilinkwa':
+    case 'antilinkwha':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLink = isEnable
+      break
+      
+      
+      case 'nsfw':
+      case '+18':
+       if (m.isGroup) {
+         if (!(isAdmin || isOwner)) {
+           global.dfail('admin', m, conn)
+            throw false
+           }}
+    chat.nsfw = isEnable          
+    break
 
+    case 'autolevelup':
+    isUser = true
+     user.autolevelup = isEnable
+     break
+     
+     case 'chatbot':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.chatbot = isEnable
+      break
+     
+    case 'restrict':
+    case 'restringir':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      bot.restrict = isEnable
+      break
+      case 'autotype':
+    case 'alwaysonline':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      chat.autotype = isEnable
+      break
+      
+      case 'anticall':
+        case 'nocall':
+          isAll = true
+          if (!isOwner) {
+            global.dfail('owner', m, conn)
+            throw false
+          }
+          bot.antiCall = isEnable
+          break
+    case 'onlypv':
+    case 'onlydm':
+    case 'onlymd':
+    case 'solopv':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['pconly'] = isEnable
+      break
+      
+    case 'gponly':
+    case 'onlygp':
+    case 'grouponly':
+    case 'sologp':
+    case 'sologrupo':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['gconly'] = isEnable
+      break
+      
+    default:
+     if (!/[01]/.test(command)) return m.reply(`
+≡ List of options
 
+◈──『 *ADMIN*』───⳹
+⛊ welcome
+⛊ antilink
+⛊ nsfw
+⛊ autosticker
+⛊ detect
+⛊ jarvis
+⛊ antispam
+⛊ antitoxic
+╰──────────⳹ 
+◈──『 *USERS*』───⳹
+⛊ autolevelup
+⛊ chatbot 
+╰──────────⳹
+◈──『 *OWNER*』───⳹
+⛊ onlydm
+⛊ grouponly
+⛊ autotype
+⛊ autobio
+╰──────────⳹
+*📌 Example :*
+*${usedPrefix}on* welcome
+*${usedPrefix}off* welcome
+`)
+      throw false
+  }
 
+m.reply(`
+✅ *${type}* Now *${isEnable ? 'Active' : 'Deactive'}* ${isAll ? 'for this bot' : isUser ? '' : 'for this bot'}
+`.trim()) 
 
+}
+handler.help = [تفعيل].map(v => v + 'able <option>')
+handler.tags = ['config']
+handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01]|تفعيل)$/i
 
-
-𝑩𝒚 : 𝑍𝐸𝑍𝛩
-┗━━━━━━━━━━━━━┛`,
-title: null,
-buttonText: "◥ ツاختر من هناツ ◤",
-sections }
-conn.sendButton(m.chat, `🗂️ خيار: ${type} 
-🎚️ الحالة: ${isEnable ? 'مفعل' : 'معطل'}
-📣 ل: ${isAll ? 'البوت ده' : isUser ? '' : 'الشات ده'}`, author, null,`${isEnable ? `#disable ${type}` : `#enable ${type}`}`]], m)}
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['group', 'owner']
-handler.command = /^((en|dis)able|(تفعي)ل|(turn)?[01])$/i
 export default handler
