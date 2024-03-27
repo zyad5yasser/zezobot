@@ -152,6 +152,8 @@ const handler = async (m, {command, conn}) => {
     conn.sendMessage(m.chat, {image: {url: haha.data}, caption: `_${command}_`.trim()}, {quoted: m});
   }
 };
+handler. help = ['جبل', 'ببجي', 'جيمينج', 'انميز', 'عشوائي', 'coffee', 'سياره', 'كرتون', 'ciberespacio', 'تيكنولوجيا', 'درايمون', 'هكر', 'كوكب', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto'] 
+handler. tags = ['صور'] 
 handler.command = ['جبل', 'ببجي', 'جيمينج', 'انميز', 'عشوائي', 'coffee', 'سياره', 'كرتون', 'ciberespacio', 'تيكنولوجيا', 'درايمون', 'هكر', 'كوكب', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto'];
 export default handler;
 
