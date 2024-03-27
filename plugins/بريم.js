@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['addowner']
 handler.tags = ['owner']
-handler.command = /^addowner|بريم$/i
+handler.command = /^addowner|بريم|خد$/i
 handler.owner = true
 
 export default handler
