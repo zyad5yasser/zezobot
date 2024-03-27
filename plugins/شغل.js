@@ -314,9 +314,9 @@ thumbnail: await (await fetch(vid.thumbnail)).buffer()}}}, { quoted: m })
         await conn.reply(m.chat,`*☓ Ocurrió un error inesperado*`, m).then(_ => m.react('✖️'))
         console.error(error)
 }}}}}
-handler.help = ["تشغيل"].map(v => v + " <formato> <búsqueda>")
+handler.help = ["شغل"].map(v => v + " <formato> <búsqueda>")
 handler.tags = ["downloader"]
-handler.command = ['تشغيل']
+handler.command = ['شغل']
 handler.register = true 
 handler.star = 2
 export default handler
