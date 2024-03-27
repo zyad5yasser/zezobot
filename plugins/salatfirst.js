@@ -7,15 +7,15 @@ export async function before(m) {
         return false;
     }
     let jadwalSholat = {
-        الفجر: "04:30",
-        الضحى: "05:58",
-        الظهر: "12:03",
-        العصر: "15:31",
-        المغرب: "18:15",
-        العشاء: "19:27"
+        الفجر: "04:23",
+        الضحى: "05:50",
+        الظهر: "12:00",
+        العصر: "15:33",
+        المغرب: "18:11",
+        العشاء: "19:29"
     };
     const date = new Date(new Date().toLocaleString("en-US", {
-      timeZone:"Africa/Casablanca"
+      timeZone:"Africa/Cairo"
     }));
     const hours = date.getHours();
     const minutes = date.getMinutes();
