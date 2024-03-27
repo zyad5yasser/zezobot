@@ -4,6 +4,7 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
         if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
         else who = m.chat
         if (!who) throw `❒ منشن شخص ما\n\n❍ مثال : ${usedPrefix + command} @الشخص`
+        if (!(who in global.db.data.users)) throw `❒ المستخدم غير موجود في قاعدة البيانات الخاصة بي`
         let name = conn.getName(m.sender)
         let warn = global.db.data.users[who].warn
         if (warn < war) {
@@ -31,7 +32,7 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
 }
 handler.help = ['انذار']
 handler.tags = ['group']
-handler.command = ['انذار','تحذير'] 
+handler.command = ['انذار'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
