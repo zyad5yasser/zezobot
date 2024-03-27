@@ -5,8 +5,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
     throw `مرحبا *${name}*, هل تريد التحدث? Respond with *${usedPrefix + command}* (your message)\n\n📌 Example: *${usedPrefix + command}* Hi bot`;
   }
-  
-  m.react('🗣️');
 
   const msg = encodeURIComponent(text);
   
