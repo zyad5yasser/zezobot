@@ -1,3 +1,4 @@
+
 let timeout = 60000
 let poin = 500
 let handler = async (m, { conn, command, usedPrefix }) => {
@@ -7,19 +8,19 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         conn.reply(m.chat, '❐┃لم يتم الاجابة علي السؤال بعد┃❌ ❯', conn.tebakbendera[id][0])
         throw false
     }
-    let src = await (await fetch('https://gist.githubusercontent.com/Kyutaka101/799d5646ceed992bf862026847473852/raw/dcbecff259b1d94615d7c48079ed1396ed42ef67/gistfile1.txt)).json()
+    let src = await (await fetch('https://raw.githubusercontent.com/Hjfjckb/Kurosaki/main/Kurosaki.json')).json()
   let json = src[Math.floor(Math.random() * src.length)]
     let caption = `*${command.toUpperCase()}*
   ❐↞┇الـوقـت⏳↞ *${(timeout / 1000).toFixed(2)} ┇
- استخدم .انسحب للأنسحاب
+  *استخدم .انسحب للأنسحاب*
   ❐↞┇الـجـائـزة💰↞ ${poin} نقاط┇
-『𝙕𝙊𝙍𝙊-𝘽𝙊𝙏』
+*❰BY : 𝑍𝐸^𝑍𝛩❱*
      `.trim()
     conn.tebakbendera[id] = [
-        await conn.sendFile(m.chat, json.img, '', caption, m),
+        await conn.sendFile(m.chat, json.question, '', caption, m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakbendera[id]) conn.reply(m.chat, `❮ ⌛┇انتهي الوقت┇⌛❯\n❐↞┇الاجـابـة✅↞ ${json.name}*┇`, conn.tebakbendera[id][0])
+            if (conn.tebakbendera[id]) conn.reply(m.chat, `❮ ⌛┇انتهي الوقت┇⌛❯\n❐↞┇الاجـابـة✅↞ ${json.response}*┇`, conn.tebakbendera[id][0])
             delete conn.tebakbendera[id]
         }, timeout)
     ]
