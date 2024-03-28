@@ -1,7 +1,7 @@
 let handler  = async (m, { conn }) => {
-conn.reply(m.chat,`*♚  مرحبا بك في قسم لعبة صراحه ♚*\n          ꔹ━━━━━━━━━━━ꔹ\n*『${pickRandom(global.bjssvjs)}』*\n*ꔹ━━━━━ꔹ❰ 𝙕𝙊𝙍𝙊-𝘽𝙊𝙏  ❱ꔹ━━━━━ꔹ*`, m)
+conn.reply(m.chat,`*♚  مرحبا بك في قسم لعبة صراحه ♚*\n          ꔹ━━━━━━━━━━━ꔹ\n*『${pickRandom(global.bjssvjs)}』*\n*ꔹ━━━━━ꔹ❰ 𝑍𝐸𝑍𝛩 𝐵𝛩𝑇  ❱ꔹ━━━━━ꔹ*`, m)
 }
-handler.help = ['uwvssj']
+handler.help = ['صراحه']
 handler.tags = ['fun']
 handler.command = /صراحه|صراحة|الصراحه/i
 export default handler
