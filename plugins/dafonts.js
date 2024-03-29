@@ -16,7 +16,7 @@ let handler = async (m, {
     ]
 
     let [feature, inputs, inputs_, inputs__, inputs___] = text.split("+")
-    if (!lister.includes(feature)) return m.reply("*هذا الامر سوف ينفع المصممين و اصحاب المونطاج سواء الصور او الفيديو يمكن من خلال هذا الامر تحميل الخطوط العربية منها والاجنبية من موقع*\n\nhttps://www.dafont.com/\n\n سوف اعطيك مثال لكيفية تشغيله:\n\n*.dafonts s+arab*\n\nالان عندما يعطيك البوت الروابط الخاصة بالخطوط قم بنسخ الدي تريد ثم اكتب \n\n*.dafonts d+*(رابط الخط)\n\n♥\n" + lister.map((v, index) => "  ○ " + v).join("\n"))
+    if (!lister.includes(feature)) return m.reply("*هذا الامر سوف ينفع المصممين و اصحاب المونتاج سواء الصور او الفيديو يمكن من خلال هذا الامر تحميل الخطوط العربية منها والاجنبية من موقع*\n\nhttps://www.dafont.com/\n\n سوف اعطيك مثال لكيفية تشغيله:\n\n*.dafonts s+arab*\n\nالان عندما يعطيك البوت الروابط الخاصة بالخطوط قم بنسخ الدي تريد ثم اكتب \n\n*.dafonts d+*(رابط الخط)\n\n♥\n" + lister.map((v, index) => "  ○ " + v).join("\n"))
 
     if (lister.includes(feature)) {
 
@@ -45,7 +45,7 @@ let handler = async (m, {
         }
 
         if (feature == "d") {
-            if (!inputs) return m.reply("مثال:\n\n.dafonts d+https://www.dafont.com/arabia.font")
+            if (!inputs) return m.reply("مثال:\n\n.خطوط d+https://www.dafont.com/arabia.font")
             try {
                 let item = await downloadDafont(inputs)
                 let cap = '🔍 *[ RESULT ]*\n\n📰 *Title:* ' + item.title +
@@ -70,9 +70,9 @@ let handler = async (m, {
         }
     }
 }
-handler.help = ["dafonts"]
+handler.help = ["خطوط"]
 handler.tags = ["downloader"]
-handler.command = /^(dafonts)$/i
+handler.command = /^(خطوط)$/i
 export default handler
 
 /* New Line */
