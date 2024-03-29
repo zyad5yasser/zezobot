@@ -15,6 +15,6 @@ mentions: [a, b]
 })}
 handler.help = ['بيبضني]
 handler.tags = ['fun']
-handler.command = ['بيبضني']
+handler.command = ['بيض']
 handler.group = true
 export default handler
