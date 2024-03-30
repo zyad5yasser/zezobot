@@ -1,44 +1,189 @@
-import { unlinkSync, readFileSync } from 'fs'
-import { join } from 'path'
-import { exec } from 'child_process'
+/**
+ Copyright (C) 2022.
+ Licensed under the  GPL-3.0 License;
+ You may not use this file except in compliance with the License.
+ It is supplied in the hope that it may be useful.
+ * @project_name : Secktor-Md
+ * @author : SamPandey001 <https://github.com/SamPandey001>
+ * @description : Secktor,A Multi-functional whatsapp bot.
+ * @version 0.0.6
+ **/
 
-let handler = async (m, { conn, args, __dirname, usedPrefix, command }) => {
-try {
-let q = m.quoted ? m.quoted : m
-let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
-let set
-if (/عميق/.test(command)) set = '-af equalizer=f=94:width_type=o:width=2:g=30'
-if (/منفوخ/.test(command)) set = '-af acrusher=.1:1:64:0:log'
-if (/تخين/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
-if (/صاخب/.test(command)) set = '-af volume=12'
-if (/سريع/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
-if (/تخينن/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
-if (/رفيع/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
-if (/تقطيع/.test(command)) set = '-filter_complex "areverse"'
-if (/روبوت/.test(command)) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
-if (/بطيء/.test(command)) set = '-filter:a "atempo=0.7,asetrate=44100"'
-if (/ناعم/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
-if (/سنجاب/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
-if (/audio/.test(mime)) {
-let ran = getRandom('.mp3')
-let filename = join(__dirname, '../tmp/' + ran)
-let media = await q.download(true)
-exec(`ffmpeg -i ${media} ${set} ${filename}`, async (err, stderr, stdout) => {
-await unlinkSync(media)
-if (err) throw `Error`
-let buff = await readFileSync(filename)
-conn.sendFile(m.chat, buff, ran, null, m, true, {
-type: 'audioMessage', 
-ptt: true 
-})})
-} else throw `*رد على الصوت الذي تريد تحويله، استخدم الامر التالي ${usedPrefix + command}*`
-} catch (e) {
-throw e
-}}
-handler.help = ['تخينن', 'منفوخ', 'عميق', 'صاخب', 'سريع', 'تخين', 'سنجاب', 'reverse', 'روبوت', 'بطيء', 'ناعم', 'رفيع'].map(v => v + ' [vn]')
-handler.tags = ['audio-changer']
-handler.command = /^(عميق|منفوخ|تخين|صاخب|سريع|تخينن|رفيع|روبوت|بطيء|ناعم|سنجاب)$/i
-export default handler
-
-const getRandom = (ext) => {
-return `${Math.floor(Math.random() * 10000)}${ext}`}
+ const { tlang, ffmpeg,cmd } = require('../lib')
+ const fs = require('fs')
+ const { exec } = require('child_process')
+ //---------------------------------------------------------------------------
+ cmd({
+         pattern: "bass",
+         desc: "adds bass in given sound",
+         category: "audio",
+         use: '<reply to any audio>',
+         react:"✅",
+     },
+     async(Void, citel) => {
+         let mime = citel.quoted.mtype
+         let set = "-af equalizer=f=54:width_type=o:width=2:g=20";
+         if (/audio/.test(mime)) {
+             citel.reply(tlang().wait);
+             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+             let ran = citel.sender.slice(6) + (".mp3");
+             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                 fs.unlinkSync(media);
+                 if (err) return reply(err);
+                 let buff = fs.readFileSync(ran);
+                 Void.sendMessage(
+                     citel.chat, {
+                         audio: buff,
+                         mimetype: "audio/mpeg",
+                     }, {
+                         quoted: citel,
+                     }
+                 );
+                 fs.unlinkSync(ran);
+             });
+         } else
+             citel.reply(
+                 `Reply to the audio you want to change with*`
+             );
+     }
+ )
+ //---------------------------------------------------------------------------
+ cmd({
+         pattern: "blown",
+         desc: "adds blown in given audio",
+         category: "audio",
+         use: '<reply to any audio>',
+         react:"✅",
+     },
+     async(Void, citel) => {
+         let mime = citel.quoted.mtype
+         let set = "-af acrusher=.1:1:64:0:log";
+         if (/audio/.test(mime)) {
+             citel.reply(tlang().wait);
+             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+             let ran = citel.sender.slice(6) + (".mp3");
+             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                 fs.unlinkSync(media);
+                 if (err) return reply(err);
+                 let buff = fs.readFileSync(ran);
+                 Void.sendMessage(
+                     citel.chat, {
+                         audio: buff,
+                         mimetype: "audio/mpeg",
+                     }, {
+                         quoted: citel,
+                     }
+                 );
+                 fs.unlinkSync(ran);
+             });
+         } else
+             citel.reply(
+                 `Reply to the audio you want to change with.*`
+             );
+     }
+ )
+ //---------------------------------------------------------------------------
+ cmd({
+         pattern: "deep",
+         desc: "adds deep effect in given audio",
+         category: "audio",
+         use: '<reply to any audio>',
+         react:"✅",
+     },
+     async(Void, citel) => {
+         let mime = citel.quoted.mtype
+         let set = "-af atempo=4/4,asetrate=44500*2/3";
+         if (/audio/.test(mime)) {
+             citel.reply(tlang().wait);
+             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+             let ran = citel.sender.slice(6) + (".mp3");
+             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                 fs.unlinkSync(media);
+                 if (err) return reply(err);
+                 let buff = fs.readFileSync(ran);
+                 Void.sendMessage(
+                     citel.chat, {
+                         audio: buff,
+                         mimetype: "audio/mpeg",
+                     }, {
+                         quoted: citel,
+                     }
+                 );
+                 fs.unlinkSync(ran);
+             });
+         } else
+             citel.reply(
+                 `Reply to the audio you want to change with.*`
+             );
+     }
+ )
+ //---------------------------------------------------------------------------
+ cmd({
+         pattern: "fast",
+         desc: "Adds fast(equilizer) in quoted audio.",
+         category: "audio",
+         use: '<reply to any audio>',
+         react:"✅",
+     },
+     async(Void, citel) => {
+         let mime = citel.quoted.mtype
+         let set = '-filter:a "atempo=1.63,asetrate=44100"';
+         if (/audio/.test(mime)) {
+             citel.reply(tlang().wait);
+             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+             let ran = citel.sender.slice(6) + (".mp3");
+             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                 fs.unlinkSync(media);
+                 if (err) return reply(err);
+                 let buff = fs.readFileSync(ran);
+                 Void.sendMessage(
+                     citel.chat, {
+                         audio: buff,
+                         mimetype: "audio/mpeg",
+                     }, {
+                         quoted: citel,
+                     }
+                 );
+                 fs.unlinkSync(ran);
+             });
+         } else
+             citel.reply(
+                 `Reply to the audio you want to change with.*`
+             );
+     }
+ )
+ //---------------------------------------------------------------------------
+ cmd({
+         pattern: "reverse",
+         desc: "Adds reverse(equilizer) in quoted audio.",
+         category: "audio",
+         use: '<reply to any audio>',
+         react:"✅",
+     },
+     async(Void, citel) => {
+         let mime = citel.quoted.mtype
+         let set = '-filter_complex "areverse"';
+         if (/audio/.test(mime)) {
+             citel.reply(tlang().wait);
+             let media = await Void.downloadAndSaveMediaMessage(citel.quoted);
+             let ran = citel.sender.slice(6) + (".mp3");
+             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+                 fs.unlinkSync(media);
+                 if (err) return reply(err);
+                 let buff = fs.readFileSync(ran);
+                 Void.sendMessage(
+                     citel.chat, {
+                         audio: buff,
+                         mimetype: "audio/mpeg",
+                     }, {
+                         quoted: citel,
+                     }
+                 );
+                 fs.unlinkSync(ran);
+             });
+         } else
+             citel.reply(
+                 `Reply to the audio you want to change with.*`
+             );
+     }
+ )
