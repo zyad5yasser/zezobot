@@ -20,11 +20,11 @@ let tags = {
   'uploader':'‎‎ رفع الملفات‎',
 }
 const defaultMenu = {
-  before: `السلام عليكم 👋. 
+  before: `السلام عليكم/nكيف حالك. 
 
-┏━━ salam  *%name*
-👥 *Total user:* %totalreg 
-⏰ *Uptime:* %muptime  
+┏━━ مرحبا  *%name*
+👥 *المستخدمين:* %totalreg 
+⏰ *وقت التشغيل:* %muptime  
 ┗━━━━━━━━━━⬣
 %readmore
   ≡ *𝑍 𝐸 𝑍 𝛩 | M E N U*
@@ -32,7 +32,8 @@ const defaultMenu = {
   header: '┏━━⊜ *_%category_* ',
   body: '┃⋄ %cmd %isdiamond %isPremium',
   footer: '┗━━━━━━━━⬣\n',
-  after:'*هذا البوت خاص بزياد ياسر*',
+  after:'*شروط الاستخدام 
+   '*عليك استخدام البوت بتوازن*',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
