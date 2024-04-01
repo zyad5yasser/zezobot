@@ -32,11 +32,6 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
   );
   if (user.warn >= 3) {
     if (!bot.restrict) {
-      return m.reply(
-          '*[❗𝐈𝐍𝐅𝐎❗] المالك مفعلش الطرد كلمه عشان يفعلها*',
-      );
-    }
-    user.warn = 0;
     await m.reply(
         `حذرتك عدده مرات!!\n*@${
           who.split`@`[0]
