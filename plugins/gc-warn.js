@@ -32,6 +32,11 @@ const handler = async (m, {conn, text, command, usedPrefix}) => {
   );
   if (user.warn >= 3) {
     if (!bot.restrict) {
+      return m.reply(
+          '*[❗𝐈𝐍𝐅𝐎❗] لا استطيع الطرد تلقائيا اكتب طرد حتي اطرده*',
+      );
+    }
+    user.warn = 0;
     await m.reply(
         `حذرتك عدده مرات!!\n*@${
           who.split`@`[0]
