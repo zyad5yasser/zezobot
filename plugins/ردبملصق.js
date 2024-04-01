@@ -8,13 +8,13 @@ let handler = async (m, { conn }) => {
     let nombre2 = '201276638909'
  
     const s = [
-        'https://telegra.ph/file/7287ef0b4746312619007.jpg',
-        'https://telegra.ph/file/b1d458b89078f41f7db7c.jpg',
-        'https://telegra.ph/file/b7f2f570941997e252797.jpg',
-        'https://telegra.ph/file/f13ca4b9e6a8c4e26d870.jpg',
-        'https://telegra.ph/file/6f427ea6c283c60db8093.jpg',
-        'https://telegra.ph/file/3975c0a2dc1719ef81055.jpg',
-        'https://telegra.ph/file/c4b192332d82802cba587.jpg'
+        'https://telegra.ph/file/581e6160af36def7872da.png',
+        'https://telegra.ph/file/581e6160af36def7872da.png',
+        'https://telegra.ph/file/581e6160af36def7872da.png',
+        'https://telegra.ph/file/581e6160af36def7872da.png',
+        'https://telegra.ph/file/581e6160af36def7872da.png',
+        'https://telegra.ph/file/581e6160af36def7872da.png',
+        'https://telegra.ph/file/581e6160af36def7872da.png'
     ];  
  
     let stiker = await sticker(null, s[Math.floor(Math.random() * s.length)], nombre, nombre2)
