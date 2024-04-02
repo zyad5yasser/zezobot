@@ -935,8 +935,8 @@ export async function handler(chatUpdate) {
         if (!('welcome' in chat)) chat.welcome = true;
         if (!('detect' in chat)) chat.detect = true;
         if (!('detect2' in chat)) chat.detect2 = false;
-        if (!('sWelcome' in chat)) chat.sWelcome = '';
-        if (!('sBye' in chat)) chat.sBye = '';
+        if (!('sWelcome' in chat)) chat.sWelcome = 'مرحبا';
+        if (!('sBye' in chat)) chat.sBye = 'وداعا';
         if (!('sPromote' in chat)) chat.sPromote = '';
         if (!('sDemote' in chat)) chat.sDemote = '';
         if (!('delete' in chat)) chat.antidelete = false;
@@ -960,7 +960,7 @@ export async function handler(chatUpdate) {
           welcome: true,
           detect: true,
 	  detect2: false,
-          sWelcome: '',
+          sWelcome: 'مرحبا',
           sBye: '',
           sPromote: '',
           sDemote: '',
@@ -1422,7 +1422,7 @@ export async function participantsUpdate({id, participants, action}) {
     case 'add':
     case 'remove':
       if (chat.welcome && !chat?.isBanned) {
-        const groupMetadata = await m.conn.groupMetadata(id) || (conn.chats[id] || {}).metadata;
+        const groupMetadata = await m.conn.groupMetadata(id) || (conn.chats[id] || {مرحبا}).metadata;
         for (const user of participants) {
           let pp = './src/avatar_contact.png';
           try {
@@ -1547,7 +1547,7 @@ global.dfail = (type, m, conn) => {
     restrict: '*[ ℹ️ ] تم تعطيل هذا الأمر من قبل مالك الروبوت.*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
-  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Warning*', body: 'BOBIZABOT', thumbnail: imagen1, sourceUrl: 'https://instagram.com/noureddine_ouafy'}}}}, aa);
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] تحذير*', body: 'BOBIZABOT', thumbnail: imagen1, sourceUrl: 'https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg=='}}}}, aa);
   if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
