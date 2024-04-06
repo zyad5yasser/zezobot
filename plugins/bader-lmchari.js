@@ -3,9 +3,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 			await conn.sendMessage(m.chat, { video: { url: dir[Math.floor(Math.random() * dir.length)] }, caption: `_تابع صاحب البوت في الانستغرام_\https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg==` }, { quoted: m })
 	}
 
-handler.help = ['bader']
+handler.help = ['بادر']
 handler.tags = ['islam']
-handler.command = /^(bader)$/i
+handler.command = /^(بادر)$/i
 handler.limit = false
 
 export default handler
