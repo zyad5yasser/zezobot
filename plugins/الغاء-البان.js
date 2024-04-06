@@ -10,11 +10,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     users[who].banned = false
     conn.reply(m.chat, `
 تم الغاء البان !
-@${who.split`@`[0]} has been unbanned`, m, { mentions: [who] })
+@${who.split`@`[0]} لقد اصبحت غير مبند الان تستطيع استخدام البوت`, m, { mentions: [who] })
 }
-handler.help = ['unban @user']
+handler.help = ['بانفك']
 handler.tags = ['owner']
-handler.command = /^الغاء_البان$/i
+handler.command = /^الغاء_البان|حذف_البان|حذف-البان|بانفك$/i
 handler.rowner = true
 
 export default handler
