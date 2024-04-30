@@ -21,18 +21,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                         highlight_label: 'زيزو',
                         rows: [
                           {
-                            header: 'منشن',
-                            title: 'منشن',
-                            description: '',
-                            id: '.منشن'
-                          },
-                                        {
-                            header: 'مخفي',
-                            title: 'مخفي',
-                            description: '',
-                            id: '.مخفي'
-                          },
-                          {
                             header: 'المطور',
                             title: 'المطور',
                             description: '',
