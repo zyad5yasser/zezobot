@@ -4,10 +4,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         message: {
           interactiveMessage: {
             header: {
-              title: 'الازرار'
+              title: 'الاوامر'
             },
             body: {
-              text: 'تست'
+              text: 'جرب براحتك'
             },
             nativeFlowMessage: {
               buttons: [
@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     sections: [
                       {
                         title: 'القائمة',
-                        highlight_label: 'تست',
+                        highlight_label: 'زيزو',
                         rows: [
                           {
                             header: 'منشن',
@@ -37,7 +37,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                             title: 'المطور',
                             description: '',
                             id: '.المطور'
-                          }
+                          }, 
+                          {
+                                header: 'القايمه', 
+                                title: 'القايمه', 
+                                description: '', 
+                                id: '.القايمه', 
+                         } 
                         ]
                       }
                     ]
