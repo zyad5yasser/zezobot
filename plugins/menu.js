@@ -157,7 +157,7 @@ renderLargerThumbnail: true
 }
 handler.help = ['اوامر']
 handler.tags = ['infobot']
-handler.command = ['menu','z','list','اوامر','الاوامر','مهام'] 
+handler.command = ['menu','z','list','القايمه'] 
 handler.register = false
 
 
