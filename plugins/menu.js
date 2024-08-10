@@ -32,7 +32,7 @@ const defaultMenu = {
   header: '┏━━⊜ *_%category_* ',
   body: '┃⋄ %cmd %isdiamond %isPremium',
   footer: '┗━━━━━━━━⬣\n',
-  after:'*رقم المطور اذا احتجت حاجه كلمه 201276638909*',
+  after:'*رقم المطور اذا احتجت حاجه كلمه 212658594530 *',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
