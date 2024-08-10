@@ -10,23 +10,23 @@ import moment from 'moment-timezone';
 global.botnumber = ""
 
 global.owner = [
-  ['201276638909', '𝑍𝐸𝑍𝛩', true],
+  ['212658594530', 'AHMED ALIGUE', true],
 
-  ['201116117654','𝑍𝐸𝑍𝛩 𝐵𝛩𝑇', true],
+  ['201116117654','𝑍𝐸𝑍𝛩 𝐵𝛩𝑇', false],
   ['201508628077'],
   ['201508628077']
 ];
 
-global.suittag = ['201276638909'];
-global.prems = ['201508628077'];
+global.suittag = ['212658594530'];
+global.prems = ['212658594530'];
 
-global.packname = '𝑍𝐸𝑍𝛩 𝐵𝛩𝑇';
-global.author = '𝑍𝐸𝑍𝛩';
-global.wm = '𝑍𝐸𝑍𝛩';
-global.titulowm = '𝑍𝐸𝑍𝛩';
-global.titulowm2 = `𝑍𝐸𝑍𝛩`
+global.packname = 'SENKU 𝐵𝛩𝑇';
+global.author = 'SENKU';
+global.wm = 'SENKJ';
+global.titulowm = 'SENKU';
+global.titulowm2 = `SENKU`
 global.igfg = 'bobiza';
-global.wait = '*|🏃| loading...*\n*نحاول تلبية طلبكم لا تستعجلوا* ♥\nhttps://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNkeg==';
+global.wait = '*|🏃| loading...*\n*نحاول تلبية طلبكم لا تستعجلوا* ';
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
 global.imagen2 = fs.readFileSync('./src/nuevobot.jpg');
 global.imagen3 = fs.readFileSync('./src/Pre Bot Publi.png');
@@ -53,7 +53,7 @@ global.mysticbot = 'https://www.instagram.com/zaidyasser44?igsh=MWkweWpwMG10bjNk
 global.waitt = '*[ ⏳ ] LOADING...*';
 global.waittt = '*[ ⏳ ] LOADING...*';
 global.waitttt = '*[ ⏳ ] LOADING...*';
-global.nomorown = '201276638909';
+global.nomorown = '212658594530';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
